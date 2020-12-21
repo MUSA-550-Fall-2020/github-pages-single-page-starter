@@ -15,7 +15,6 @@ vegaEmbed {% endcomment %}
 <script type="text/javascript">
   {% for chart in page.altair-loader %}
     $.getJSON("{{ site.baseurl }}/{{ chart[1] }}", spec => {
-      spec['width'] = "container";
       vegaEmbed("#{{ chart[0] }}", spec)
         .catch(console.error);
     });
